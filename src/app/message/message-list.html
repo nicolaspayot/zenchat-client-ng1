@@ -1,34 +1,6 @@
-<message
-  avatar="'/img/eddard.png'"
-  sender="'eddard'"
-  timestamp="'01:00 AM'"
-  content="'The man who passes the sentence should swing the sword.'">
-</message>
-
-<message
-  avatar="'/img/khaleesi.png'"
-  sender="'khaleesi'"
-  timestamp="'02:00 AM'"
-  content="'The next time you raise a hand to me will be the last time you have hands!'">
-</message>
-
-<message
-  avatar="'/img/cersei.png'"
-  sender="'cersei'"
-  timestamp="'03:00 AM'"
-  content="'When you play the game of thrones, you win or you die.'">
-</message>
-
-<message
-  avatar="'/img/tyrion.png'"
-  sender="'tyrion'"
-  timestamp="'04:00 AM'"
-  content="'The mad king did as he liked, has your uncle Jaime ever told you what happened to him?'">
-</message>
-
-<message
-  avatar="'/img/jaqenhghar.png'"
-  sender="'jaqenhghar'"
-  timestamp="'05:00 AM'"
-  content="'A girl gives a man his own name?'">
+<message ng-repeat="msg in $ctrl.messages"
+  avatar="msg.avatar"
+  sender="msg.sender"
+  timestamp="msg.timestamp"
+  content="msg.content">
 </message>
