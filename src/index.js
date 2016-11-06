@@ -13,7 +13,6 @@ import {zenchatMessage} from './app/message/';
 angular.module('zenchat', [
   zenchatMessage
 ])
-  .constant('API_URL', 'http://localhost:8080/api')
   .component('zenchat', zenchat)
   .component('znkHeader', znkHeader)
   .component('znkFooter', znkFooter);
