@@ -1,7 +1,7 @@
 export class MessageListController {
-  'ngInject';
-
   constructor(MessageService) {
+    'ngInject';
+
     this.MessageService = MessageService;
   }
 
