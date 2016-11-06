@@ -6,6 +6,8 @@ export class MessageListController {
   }
 
   $onInit() {
-    this.messages = this.MessageService.getMessages();
+    this.MessageService.getMessages().then(response => {
+      this.messages = response.data;
+    });
   }
 }

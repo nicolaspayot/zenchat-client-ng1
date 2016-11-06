@@ -1,6 +1,6 @@
 <message ng-repeat="msg in $ctrl.messages"
-  avatar="msg.avatar"
-  sender="msg.sender"
-  timestamp="msg.timestamp"
+  avatar="msg.sender.avatar"
+  sender="msg.sender.nickname"
+  timestamp="msg.timestamp | date:'hh:mm a'"
   content="msg.content">
 </message>
