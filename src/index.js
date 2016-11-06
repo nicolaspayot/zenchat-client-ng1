@@ -6,15 +6,13 @@ import angular from 'angular';
 
 import {zenchat} from './app/zenchat.component';
 import {znkHeader} from './app/header/znk-header.component';
-import {messageList} from './app/message/message-list.component';
-import {MessageListController} from './app/message/message-list.controller';
-import {message} from './app/message/message.component';
 import {znkFooter} from './app/footer/znk-footer.component';
 
-angular.module('zenchat', [])
+import {zenchatMessage} from './app/message/';
+
+angular.module('zenchat', [
+  zenchatMessage
+])
   .component('zenchat', zenchat)
   .component('znkHeader', znkHeader)
-  .component('messageList', messageList)
-  .controller('MessageListController', MessageListController)
-  .component('message', message)
   .component('znkFooter', znkFooter);

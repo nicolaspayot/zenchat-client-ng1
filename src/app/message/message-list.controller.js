@@ -1,7 +1,11 @@
-import {MESSAGES} from './messages';
-
 export class MessageListController {
+  'ngInject';
+
+  constructor(MessageService) {
+    this.MessageService = MessageService;
+  }
+
   $onInit() {
-    this.messages = MESSAGES;
+    this.messages = this.MessageService.getMessages();
   }
 }
