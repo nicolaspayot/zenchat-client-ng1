@@ -21,6 +21,6 @@ export class MessageService {
   }
 
   send(message) {
-    this.$http.post(this.messagesURL, { message });
+    return this.$http.post(this.messagesURL, { message });
   }
 }

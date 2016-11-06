@@ -6,6 +6,8 @@ export class ZnkFooterController {
   }
 
   sendMessage() {
-    this.MessageService.send(this.message);
+    this.MessageService.send(this.message).then(() => {
+      this.message = '';
+    });
   }
 }
