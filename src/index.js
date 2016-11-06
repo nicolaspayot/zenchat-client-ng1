@@ -6,14 +6,13 @@ import angular from 'angular';
 
 import {zenchat} from './app/zenchat.component';
 import {znkHeader} from './app/header/znk-header.component';
-import {znkFooter} from './app/footer/znk-footer.component';
 
 import {zenchatMessage} from './app/message/';
+import {zenchatFooter} from './app/footer';
 
 angular.module('zenchat', [
-  zenchatMessage
+  zenchatMessage,
+  zenchatFooter
 ])
-  .constant('API_URL', 'http://localhost:8080/api')
   .component('zenchat', zenchat)
-  .component('znkHeader', znkHeader)
-  .component('znkFooter', znkFooter);
+  .component('znkHeader', znkHeader);
