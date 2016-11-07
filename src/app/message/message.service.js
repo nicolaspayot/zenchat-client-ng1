@@ -8,8 +8,6 @@ export class MessageService {
     this.$http = $http;
     this.messagesURL = `${API_URL}/messages`;
     this.socket = io(HOST_URL);
-
-    this.$http.defaults.headers.post['Content-Type'] = 'application/json';
   }
 
   getMessages() {
