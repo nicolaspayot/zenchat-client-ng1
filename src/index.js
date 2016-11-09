@@ -1,7 +1,3 @@
-import 'material-design-lite/material.js';
-import 'material-design-lite/material.css';
-import './index.css';
-
 import angular from 'angular';
 
 import {zenchat} from './app/zenchat.component';
