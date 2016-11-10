@@ -1,4 +1,9 @@
 export const messageList = {
-  template: require('./message-list.html'),
+  template: `
+    <message
+      ng-repeat="msg in $ctrl.messages"
+      data="msg">
+    </message>
+  `,
   controller: 'MessageListController'
 };
