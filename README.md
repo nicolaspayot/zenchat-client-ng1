@@ -40,8 +40,8 @@ Dans cette troisième étape, nous allons effectuer une requête Ajax avec le se
 
 La dernière étape consiste à permettre l'envoi d'un message et l'affichage instantané de tous les nouveaux messages.
 
-- Utiliser le service `MessageService` pour implémenter une méthode `send(message)`. Cette méthode effectue une requête POST sur l'URL https://zen-chat.herokuapp.com/api/messages avec pour paramètre un objet `{ message }` (*ES2015 shorthand notation*).
-- Ajouter un contrôleur `FooterController` au composant `footer` afin de récupérer le contenu du nouveau message (directive `ng-model` sur le champ de saisie) et d'appeler la méthode `send` de `MessageService` sur l'évènement `click` du bouton "SEND" (directive `ng-click`).
+- Utilisez le service `MessageService` pour implémenter une méthode `send(message)`. Cette méthode effectue une requête POST sur l'URL https://zen-chat.herokuapp.com/api/messages avec pour paramètre un objet `{ message }` (*ES2015 shorthand notation*).
+- Ajoutez un contrôleur `FooterController` au composant `footer` afin de récupérer le contenu du nouveau message (directive `ng-model` sur le champ de saisie) et d'appeler la méthode `send` de `MessageService` sur l'évènement `click` du bouton "SEND" (directive `ng-click`).
 
 Votre message devrait s'afficher dans la liste après un rechargement de la page.
 
