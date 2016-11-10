@@ -31,16 +31,16 @@ N'oubliez pas d'importer tous ces composants dans le module Angular `zenchat.mes
 
 ### Etape 3
 
-Dans cette troisième étape, nous allons effectuer une requête Ajax avec le service `$http` pour récupérer la liste de messages sur un serveur REST. L'URL à utiliser est la suivante : http://localhost:8080/api/messages.
+Dans cette troisième étape, nous allons effectuer une requête Ajax avec le service `$http` pour récupérer la liste de messages sur un serveur REST. L'URL à utiliser est la suivante : https://zen-chat.herokuapp.com/api/messages.
 
 - Injectez le service `$http` dans le service `MessageService` et modifiez l'implémentation de la méthode `getMessages()` pour qu'elle retourne une promesse (appel à `$http.get`) qui contiendra la liste des messages, une fois résolue.
-- Supprimez le dossier `src/img/` et la liste des messages en dur. Normalement, les messages doivent s'afficher mais sans les avatars. En effet, les liens retournés sont de la forme `img/avatar.png`. Il vous faut donc créer un contrôleur (`MessageController`) pour le composant `message` afin de construire l'URL complète pour accéder à l'avatar du message courant. Cette dernière a la forme suivante : `http://localhost:8080/img/avatar.png`.
+- Supprimez le dossier `src/img/` et la liste des messages en dur. Normalement, les messages doivent s'afficher mais sans les avatars. En effet, les liens retournés sont de la forme `img/avatar.png`. Il vous faut donc créer un contrôleur (`MessageController`) pour le composant `message` afin de construire l'URL complète pour accéder à l'avatar du message courant. Cette dernière a la forme suivante : `https://zen-chat.herokuapp.com/img/avatar.png`.
 
 ### Etape 4
 
 La dernière étape consiste à permettre l'envoi d'un message et l'affichage instantané de tous les nouveaux messages.
 
-- Utiliser le service `MessageService` pour implémenter une méthode `send(message)`. Cette méthode effectue une requête POST sur l'URL http://localhost:8080/api/messages avec pour paramètre un objet `{ message }` (*ES2015 shorthand notation*).
+- Utiliser le service `MessageService` pour implémenter une méthode `send(message)`. Cette méthode effectue une requête POST sur l'URL https://zen-chat.herokuapp.com/api/messages avec pour paramètre un objet `{ message }` (*ES2015 shorthand notation*).
 - Ajouter un contrôleur `FooterController` au composant `footer` afin de récupérer le contenu du nouveau message (directive `ng-model` sur le champ de saisie) et d'appeler la méthode `send` de `MessageService` sur l'évènement `click` du bouton "SEND" (directive `ng-click`).
 
 Votre message devrait s'afficher dans la liste après un rechargement de la page.
@@ -48,7 +48,7 @@ Votre message devrait s'afficher dans la liste après un rechargement de la page
 Pour implémenter la fonction d'affichage automatique de chaque message, nous allons utiliser une WebSocket avec `socket.io`.
 
 - Installez la dépendance suivante : `npm install --save socket.io-client`
-- Importez le module `io` dans `MessageService` : `import io from 'socket.io-client';` puis ouvrez une connection sur l'URL http://localhost:8080 dans le constructeur du service : `this.socket = io(HOST_URL)`.
+- Importez le module `io` dans `MessageService` : `import io from 'socket.io-client';` puis ouvrez une connection sur l'URL https://zen-chat.herokuapp.com dans le constructeur du service : `this.socket = io(HOST_URL)`.
 - Enfin, implémentez une méthode `onNewMessagesEvent()` qui prend en paramètre une callback qui sera executée lorsque l'évènement `message/new` sera intercepté : `this.socket.on('message/new', () => callback());`.
 
 C'est au contrôleur `MessageListController` que revient la charge d'effectuer un rechargement de la liste des messages à chaque fois qu'un nouveau message est envoyé : `this.MessageService.onNewMessagesEvent(() => { ... });`.
@@ -63,4 +63,3 @@ scrollToBottom() {
 }
 ```
 N'oubliez pas d'injecter `$element` et `$timeout` dans le contrôleur. Appelez cette méthode à chaque fois que la liste des messages est rechargée.
-
