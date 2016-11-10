@@ -1,12 +1,12 @@
 <div class="message">
-  <img class="avatar" ng-src="{{$ctrl.avatar}}" alt="Avatar" />
+  <img class="avatar" ng-src="{{$ctrl.data.sender.avatar}}" alt="Avatar" />
   <div class="message-content">
     <div>
-      <span class="sender">{{$ctrl.sender}}</span>
-      <span class="timestamp">{{$ctrl.timestamp}}</span>
+      <span class="sender">{{$ctrl.data.sender.nickname}}</span>
+      <span class="timestamp">{{$ctrl.data.timestamp}}</span>
     </div>
     <div class="message-text">
-      {{$ctrl.content}}
+      {{$ctrl.data.content}}
     </div>
   </div>
 </div>
