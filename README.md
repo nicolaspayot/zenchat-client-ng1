@@ -49,7 +49,7 @@ Pour implémenter la fonction d'affichage automatique de chaque message, nous al
 
 - Installez la dépendance suivante : `npm install --save socket.io-client`
 - Importez le module `io` dans `MessageService` : `import io from 'socket.io-client';` puis ouvrez une connection sur l'URL https://zen-chat.herokuapp.com dans le constructeur du service : `this.socket = io(HOST_URL)`.
-- Enfin, implémentez une méthode `onNewMessagesEvent()` qui prend en paramètre une callback qui sera executée lorsque l'évènement `message/new` sera intercepté : `this.socket.on('message/new', () => callback());`.
+- Enfin, implémentez une méthode `onNewMessagesEvent()` qui prend en paramètre une callback qui sera executée lorsque l'évènement `messages/new` sera intercepté : `this.socket.on('messages/new', () => callback());`.
 
 C'est au contrôleur `MessageListController` que revient la charge d'effectuer un rechargement de la liste des messages à chaque fois qu'un nouveau message est envoyé : `this.MessageService.onNewMessagesEvent(() => { ... });`.
 
